@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard </title>
+    
+    <!-- montesart icons( from google fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- material icons "add +Outlined" (from:https://developers.google.com/fonts/docs/material_icons)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/dash.css">
+</head>
+<body>
+        <main class="main-container">
+        
+          <div id="addpub-edit">
+            <div id="close-btn" ><span class="material-icons-outlined"><a href="/admin/book" >close</a></span> </div>
+           <form class="adbof" action="/admin/updatebook/{{book._id}}" method="post">
+                <h1>Add Book</h1>
+                <span>Book Title</span>
+                <br>
+                <input type="text" class="box1" placeholder="Title" name="booktitle" value="{{book.booktitle}}" required>
+                <br>
+                <br>
+                <span>Genre of the Book</span>
+                <label for="genre">Role</label>
+                <select id="genre" name="genre" value="{{book.genre}}">
+                    <option>---SELECT---</option>
+                    <option>Study Materials</option>
+                    <option>Journal</option>
+                    <option>Novel</option>
+                    <option>Poem</option>
+                </select>
+                <span>Summary</span>
+                <br>
+                <input type="text" class="box1" placeholder="Summary" name="summary" value="{{book.summary}}" required>
+                <br>
+                <span>Author Name</span>
+                <br>
+                <input type="text" class="box1" placeholder="Author Name" name="authorname" value="{{book.authorname}}" required>
+                <br>
+                <span>ISBN Number</span>
+                <br>
+                <input type="text" class="box1" placeholder="ISBN" name="isbn" value="{{book.isbn}}" required>
+                <br>
+                <span>Book Id</span>
+                <br>
+                <input type="text" class="box1"  placeholder="Book Id" name="bookid" value="{{book.bookid}}" required>
+                <br>
+                <br>
+                {{!-- <hr>
+                <span>Upload Book</span>
+                <br>
+                <input type="file" name="bookfile" required>
+                <br>
+                <br> --}}
+                <br>
+                <button type="submit" class="submit-button-2">Save</button>
+            </form>
+        </div>
+            
+        </main>
+        
+    
+    <!-- apex charts(goto:https://cdnjs.com/libraries/apexcharts) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js"></script>
+    <script src="/js/dash.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard </title>
+    
+    <!-- montesart icons( from google fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- material icons "add +Outlined" (from:https://developers.google.com/fonts/docs/material_icons)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/dash.css">
+</head>
+<body>
+        <main class="main-container">
+        
+          <div id="addpub-edit">
+            <div id="close-btn" ><span class="material-icons-outlined"><a href="/admin/addpub" >close</a></span> </div>
+           <form class="addpof" action="/admin/updatepub/{{pub._id}}" method="post">
+                <h1>Add Publication</h1>
+                <span>Article Title</span>
+                <br>
+                <input type="text" class="box1" placeholder="Title" name="articletitle" value="{{pub.articletitle}}" required>
+                <br>
+                <br>
+                <span>Subject of  your Article</span>
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject"value="{{pub.subject}}">
+                    <option>--SELECT--</option>
+                    <option>Study Materials</option>
+                    <option>journal</option>
+                    <option>Novel</option>
+                    <option>Poem</option>
+                </select>
+                <span>Abstract</span>
+                <br>
+                <input type="text" class="box1" placeholder="Abstract"  name="abstract" value="{{pub.abstract}}" required>
+                <br>
+                <br>
+                <h3>Author Details</h3>
+                <hr>
+                <span>Author Name</span>
+                <br>
+                <input type="text" class="box1" placeholder="Author Name" name="aauthorname" value="{{pub.aauthorname}}" required>
+                <br>
+                <br>
+                <span>Email Id</span>
+                <br>
+                <input type="email" class="box1"  placeholder="Email Id" name="email" value="{{pub.email}}" required>
+                <br>
+                <br>
+                <h3>Personal Details</h3>
+                <hr>
+                <span>Contact Number</span>
+                <br>
+                <input type="text" class="box1"  placeholder="Contact Number" name="contact" value="{{pub.contact}}" required>
+                <br>
+                <span>Country</span>
+                <br>
+                <input type="text" class="box1" placeholder="Country" name="country" value="{{pub.contact}}" required>
+                <br>
+                <br>
+                <button type="submit" class="submit-button-2">Submit</button>
+            </form>
+        </div>
+            
+        </main>
+        
+    
+    <!-- apex charts(goto:https://cdnjs.com/libraries/apexcharts) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js"></script>
+    <script src="/js/dash.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,546 @@
+body{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    background-color: #e6e8ed;
+    font-family: "Monserrat",sans-serif;
+
+}
+/* font properties starts */
+.material-icons-outlined{
+    vertical-align: middle;
+    line-height: 1px;
+}
+.text-primary{
+    color: #666666;
+}
+.text-blue{
+    color: #246dec;
+}
+.text-red{
+    color:#cc3c43;
+}
+.text-green{
+    color: #367952;
+}
+.text-orange{
+    color: #f5b74f;
+}
+.font-weight-bold{
+    font-weight: 600;
+}
+/* font properties ends */
+.grid-container{
+    display: grid;
+    grid-template-columns:260px 1fr 1fr 1fr;/* this means that first coloumn will be 260px wide and the remainning available space on the page will be divided into three equal parts */
+    grid-template-rows: 0.2fr 3fr;/* first header will takes 0.2fr units then rest takes 3fr units */
+    grid-template-areas: 
+     "sidebar header header header"
+     "sidebar main main main";/*it is used to describe what the layout looks like */
+    height: 100vh;
+}
+/* Header starts */
+#header{
+    grid-area:header;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;/* 0 on top,30px on right,0 on bottom,30px on left(paddings are always given clockwise)  */
+    box-shadow: 0 6px 7px -4px rgba(0,0,0,0.2);
+
+}
+#header .material-icons-outlined{
+    width: 61px;
+    height: 18px;
+    font-size: 35px;
+    display: inline-block;
+}
+.header-left:hover{
+    cursor: pointer;
+}
+.header-left input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: -14px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+.header-right:hover{
+    cursor:pointer;
+    justify-content: space-between;
+}
+.header-right .user-pic{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline;
+}
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 400px;
+    transition: max-height 0.5s;
+}
+.header-right .sub-menu-wrap .active{
+    visibility: visible;
+    opacity: 1;
+    max-height: 400px;
+}
+.sub-menu{
+    background:ghostwhite;
+    padding: 20px;
+    margin-top: -638px;
+    margin-right: -130px;
+    position: initial;
+    float: right;
+    visibility: hidden;
+    opacity: 0;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info h3{
+    font-weight: 500;
+}
+.user-info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+.sub-menu-link p{
+    width: 100%;
+}
+#header .sub-menu-link .material-icons-outlined .overla{
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+    margin-bottom: -29px;
+}
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+    color: #2098ca;
+}
+.sub-menu-link:hover p{
+    font-size: 600;
+    transform: translateX(5px);
+    color: #2098ca;
+}
+.menu-icon{
+    display: none;
+}
+/* header ends */
+
+
+/* side bar starts */
+#sidebar{
+    grid-area:sidebar;
+    height: 100%;
+    background-color:#21232d ;
+    color: #9799ab;
+    overflow-y: auto;/* overflow property is used to resize an element to reduce its dimensions */
+    transition: all 0.5s;
+    -webkit-transition:all 0.5s ;
+    z-index: 1;
+}
+.sidebar-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+}
+.sidebar-title > span {
+     display: none;
+}
+
+.sidebar-brand{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.sidebar-list{
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+.sidebar-list-item{
+    padding: 20px 20px 20px 20px;
+}
+.sidebar-list-item > a{
+    text-decoration: none;
+    color: #9799ab;
+}
+.sidebar-list-item:hover{
+    background-color: rgba(225, 225, 225, 0.2);
+    cursor: pointer;
+}
+.sidebar-responsive{
+    display: inline !important;
+    position: absolute;
+}
+/* sidebar ends */
+
+/* main container starts */
+.main-container{
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+}
+.main-title{
+    display: flex;
+    justify-content: space-between;
+}
+.main-title > p {
+    font-size: 20px;
+}
+.main-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0,0,0,0.2);
+}
+.card:first-child{
+    border-left: 7px solid #246dec;
+
+}
+.card:nth-child(2){
+    border-left: 7px solid #369752;
+}
+.card:nth-child(3){
+    border-left: 7px solid #cc3c43;
+}
+.card:nth-child(4){
+    border-left: 7px solid #f5b547;
+}
+.card > span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-inner > p{
+    font-size: 18px;
+}
+.card-inner > span {
+    font-size: 35px;
+}
+/* apexcharts starts */
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.charts-card{
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside:avoid ;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0,0,0,0.2);
+}
+.chart-title{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    font-size: 22px;
+    font-weight: 600;
+}
+/* apexcharts ends */
+/* maincontainer ends */
+
+/* media queries starts */
+
+/* medium <= 992px */
+@media screen and (max-width:992px){
+   .grid-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+    "header"
+    "main";
+   } 
+   #sidebar{
+    display: none;
+   }
+   .menu-icon{
+    display: inline;
+   }
+   .sidebar-title > span{
+       display: inline;
+   }
+
+}
+/* small <=768px */
+@media screen and (max-width:576px) {
+    .main-cards{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .charts{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    #sidebar{
+        display: none;
+    }
+}
+/* Extra small <=576px */
+@media screen and (max-width:576px) {
+    .header-left{
+        display: none;
+    }
+    #sidebar{
+        display: none;
+    }
+    
+}
+/* media queries ends */
+
+/* <------------------------Add publication page---------------------> */
+#adbtn{
+    width: 195px;
+    height: 33px;
+    font-size: 17px;
+    margin: 0px 0px 0px 940px;
+    background:#2098ca;
+    color: white;
+    border-radius: 15px;
+    border:1px solid #2098ca;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219);
+    transition: 0.5s ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+#adbtn a{
+    color: white;
+    text-decoration-line: none
+}
+/* add publication button starts */
+#addpub-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255,.9);
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(6,72,105,0.849),rgb(3,96,133)),url(../images/userlib.jpg);
+}
+#addpub-edit form{
+    background: #fff;
+    border: 1px solid #2098ca;
+    width: 29rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219);
+    border-radius: .5rem;
+    margin: 10rem;
+}
+.addpof{
+    height: 974px;
+}
+#addpub-edit form h1{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #9799ab;
+    text-align: center;
+}
+#addpub-edit form h3{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #9799ab;
+}
+#addpub-edit form span{
+    display: block;
+    font-size: 13px;
+    padding-top: 1rem;
+}
+#addpub-edit form .box1{
+    width: 92%;
+    margin: -12px -2px;
+    border: 1px solid #9799ab;
+    border-radius: .5rem;
+    padding: 0.75rem 0.75rem;
+    color: #9799ab;
+    text-transform: none;
+}
+#addpub-edit form select {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 160px;
+    border: 1px solid #9799ab;
+    border-radius: .5rem;
+}
+#addpub-edit form #adbtn{
+    width: 92%;
+    margin: -0.3rem 0;
+}
+#addpub-edit #close-btn{
+    position: absolute;
+    top: 4.5rem;right: 9.5rem;
+    cursor: pointer;
+}
+#addpub-edit #close-btn a{
+    color: white;
+    text-decoration-line: none
+}
+#addpub-edit #close-btn .material-icons-outlined{
+    font-size: 50px;
+}
+.submit-button-2 {
+    background-color:#2098ca;
+    color: white;
+    border: none;
+    padding-top: 6px;
+    margin-top: 60px;
+    margin-left: 57px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 316px;
+    height: 38px;
+
+}
+.submit-button-2:hover{
+    box-shadow: 0 3px 6px silver ;
+}
+
+.displaytable th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+    
+.displaytable th {
+    background-color: #f2f2f2;
+}
+    
+/* Add styles to the edit and delete buttons */
+.editpub-button, .deletepub-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    
+.editpub-button {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    margin-right: -8px;
+    margin-left: -8px;
+    padding-right: 25px;
+}
+    
+.deletepub-button {
+    margin-right: 10px;
+    margin-top: 5px;
+    background-color: #f44336;
+    color: white;
+}
+
+/* add publication ends */
+
+/* <---------------------Add book page-----------------------> */
+.adbof{
+    height: 711px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+    
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+    
+th {
+    background-color: #f2f2f2;
+}
+    
+/* Add styles to the edit and delete buttons */
+.edit-button, .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    margin-right: -8px;
+    margin-left: -8px;
+    padding-right: 25px;
+}
+    
+.delete-button {
+    margin-right: 10px;
+    margin-top: 5px;
+    background-color: #f44336;
+    color: white;
+}
+
+/* <-----------------------Add Student Page-------------------> */
+.addstu{
+    height: 782px;
+}
+.addstu .submit-button-2{
+    margin-top: 10px;
+}
+/* <----------------------Issued Book Page-------------------> */
+.addiss{
+    height: 775px;
+}
+.addiss .submit-button-2{
+    margin-top: -14px;
+}

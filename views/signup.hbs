@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSET College Library</title>
+    <link rel="icon" href="llogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/logina.css">
+</head> 
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <a href="#">SSET College Library</a>
+
+            <nav>
+                <a href="/signup">Home</a>
+                <a href="/about">About us</a>
+                <a href="/contact">Contact</a>
+
+                
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+        <section class="banner-container">
+                    <div class="container">
+                        <div class="left-section">
+                            <h1>Welcome to SSET College Library</h1>
+                            <br>
+                            <br>
+                            <p>Welcome to our college library, where knowledge meets boundless possibilities. Unlock your intellectual curiosity and embark on a journey of discovery within our vast collection of books, journals, and digital resources. Explore, learn, and expand your horizons with us as we empower minds and shape futures.
+                            </p>
+                            <!-- <button id="b1"><a href="#section-2" >Login</a></button> -->
+                        </div>
+          <div class="right-section">
+            <h4>Sign up</h4>
+            <form action="/signup" method="post">
+                <div class="input-group">
+                    <input type="text" id="name" name="name"
+                        required><!-- required is used to fill the text compulsory -->
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Enter Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <div class="op">
+                    <label for="role">Role</label>
+                    <select class="form-control" id="role" name="role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="submit-section">
+                    <input type="submit" class="submit-button">
+                </div>
+                <div class="para">
+                    <p>already have an account? <a href="/login">Login</a></p>
+                </div>
+            </form>
+        </div>
+        </div>
+        </section>
+    </main>
+
+            
+            <footer>
+                Design and Develope by <span>GROUP-3</span>
+            </footer>
+        
+            <script src="js/logina.js"></script>
+
+</body>
+</html>

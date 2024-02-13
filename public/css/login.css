@@ -1,0 +1,520 @@
+* /* global */{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header starts */
+header{
+    width: 100%;
+    background-color:#21232d;/*  rgba(23, 23, 23, 0.15) */;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    width: 1180px;
+    margin: auto;
+
+}
+
+header a{
+    text-decoration: none;
+    margin-right: 100px;
+    font-size: --font-size-14;
+    letter-spacing: 1px;
+    font-family: Tahoma;
+    color: white;
+}
+  
+
+
+
+
+
+
+
+/* Header ends */
+
+/* Banner starts */
+.banner-container {
+    color: white;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../images/img11.jpg);
+    /* filter: brightness(-10); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.banner-container .container{
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+/* Banner ends */
+
+/* Left section starts */
+.left-section{
+    width: 600px;
+    align-self: flex-start;
+}
+.banner-container .left-section h1{
+    margin: 0;
+    font-size: 40px;
+
+}
+
+.left-section p{
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 19px;
+    color: rgba(255, 255, 255, 0.884);
+    margin-top: 20px;
+    line-height: 28px;
+}
+
+/* #b1{
+    background-color: white; */
+    /* color: var(--primary-color); */
+    /* font-weight: bold;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+   
+
+}
+#b1 a{
+    text-decoration: none; *//* to remove underline from a link */
+    /* color: var(--primary-color);
+} */
+/* Left section ends */
+
+/* Right section starts */
+
+.right-section{
+    width: 400px;
+    background-color: white;
+    padding: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219);
+    height: 510px;
+}
+
+.right-section h4{
+    font-size: 20px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: rgb(136,136,136);
+}
+.right-section p{
+    color: black;
+}
+
+
+.input-group{
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input-group label{
+    color: rgb(165, 165, 165);
+    font-size: var(--font-size-14);
+    position: absolute; /* if we want to give absolute we want to give relative to the parent container */
+    top: 10px;
+    transition: 0.5s ease-in-out;
+    
+}
+.input-group input{
+    border: none;
+    padding: 7px;
+    margin-top: 5px;
+    outline: none; /* label border */
+    border-bottom: 1px solid #c9c9c98a;
+    color: var(--primary-color);
+    caret-color: blue; /* used for text line eg: ugggu| */
+}
+.input-group input:focus ~ label/* ~ (sibling selector) used for accesing all label from input-group */,
+.input-group input:valid ~ label/* used for nonmixing name and nametext so name will fixed at top of nametext */{
+    color: var(--primary-color);
+    top: -10px;
+    font-size: 12px;
+}
+
+.input-group input:focus ,
+.input-group input:valid{
+    border-color: var(--primary-color); /* used for giving border for the text eg:_*/
+
+}
+.op{
+    width: 252px;
+    height: 35px;
+    padding: 0px 80px 50px 60px;
+}
+select {
+    width: 250px;
+    height: 33px;
+    font-size: 17px;
+    margin: 8px 0;
+    background:white;
+    color: rgb(165, 165, 165);
+    border-radius: 15px;
+    border:1px solid var(--primary-color);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219);
+    transition: 0.5s ease-in-out;
+    text-align: center;
+}
+  
+option {
+    width: 250px;
+}
+.para{
+    padding: 0px 80px 50px 60px;
+    color: rgb(136,136,136);
+}
+
+
+.submit-section{
+    text-align: center;
+}
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 0;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 300px;
+
+}
+.submit-button:hover{
+    box-shadow: 0 3px 6px silver ;
+}
+.popup{
+    width: 377px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top:50%;
+    transform:translate(-50%,-50%) scale(1);
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+ .popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 25%;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+/* Right section ends */
+
+/* section-2 starts */
+#section-2{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/booky.jpg);
+    /* filter: brightness(-10); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sign{
+    width: 400px;
+    background-color: white;
+    padding: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219)
+}
+
+.sign h4{
+    font-size: 20px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: rgb(136,136,136);
+}
+
+.input-group-2{
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input-group-2 label{
+    color: rgb(165, 165, 165);
+    font-size: var(--font-size-14);
+    position: absolute; /* if we want to give absolute we want to give relative to the parent container */
+    top: 10px;
+    transition: 0.5s ease-in-out;
+    
+}
+.input-group-2 input{
+    border: none;
+    padding: 7px;
+    margin-top: 5px;
+    outline: none; /* label border */
+    border-bottom: 1px solid #c9c9c98a;
+    color: var(--primary-color);
+    caret-color: blue; /* used for text line eg: ugggu| */
+}
+.input-group-2 input:focus ~ label/* ~ (sibling selector) used for accesing all label from input-group */,
+.input-group-2 input:valid ~ label/* used for nonmixing name and nametext so name will fixed at top of nametext */{
+    color: var(--primary-color);
+    top: -10px;
+    font-size: 12px;
+}
+
+.input-group-2 input:focus ,
+.input-group-2 input:valid{
+    border-color: var(--primary-color); /* used for giving border for the text eg:_*/
+
+}
+
+.submit-section-2{
+    text-align: center;
+}
+.submit-button-2 {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 0;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 300px;
+
+}
+.submit-button-2:hover{
+    box-shadow: 0 3px 6px silver ;
+}
+
+
+
+/* section-2 ends */
+
+/* footer starts */
+
+footer{
+    text-align: center;
+    color: grey;
+    padding:15px;
+}
+footer span{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* footer ends */
+
+/* <--------------------------About us -------------------------- >*/
+
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: url(../images/banner-hm1.jpg);
+    /* filter: brightness(-10); */
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    
+}
+.sub-header h1{
+  position: absolute;
+  bottom: 439px;
+  right: 727px;
+  color: wheat;
+  font-size: 31px;
+}
+.b-header{
+    width: 100%;
+    background-color:#21232d;/*  rgba(23, 23, 23, 0.15) */;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.b-header .container{
+    display: flex;
+    justify-content: space-between;
+    width: 1180px;
+    margin: auto;
+    height: 22px;
+}
+
+.b-header a{
+    text-decoration: none;
+    margin-right: 100px;
+    font-size: --font-size-14;
+    letter-spacing: 1px;
+    font-family: Tahoma;
+    color: white;
+}
+.about-us{
+    width: 100%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.about-col{
+  width: 48%;
+  padding: 30px 2px;
+}
+
+.about-col img{
+    width: 100%;
+
+}
+.about-col h1{
+    padding-top: 0;
+}
+.about-col p{
+    padding: 15px 0 25px;
+    color: lightslategrey;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: lighter;
+    text-align: justify;
+}
+/* footer */
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight:600 ;
+}
+.footer p{
+    color: grey;
+}
+/* <----------------------------Contact Us-------------------------------> */
+.bub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: url(../images/banner-contact.jpg) ;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    
+}
+.bub-header h1{
+  position: absolute;
+  bottom: 330px;
+  right: 700px;
+  color:antiquewhite;
+  font-size: 31px;
+}
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+.contact-us{
+    width: 80%;
+    margin: auto;
+}
+.contact-col{
+    flex-basis:48%;
+    margin-bottom: 30px;
+}
+.contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.contact-col div svg{
+    font-size: 28px;
+    margin: 10px;
+    margin-right: 30px;
+}
+.contact-col div p{
+    padding: 0;
+}
+.contact-col div h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: 400;
+}
+.contact-col div h6{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: 250;
+}
+.contact-col input,.contact-col textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

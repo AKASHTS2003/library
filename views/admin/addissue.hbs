@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard </title>
+    
+    <!-- montesart icons( from google fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- material icons "add +Outlined" (from:https://developers.google.com/fonts/docs/material_icons)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/dash.css">
+</head>
+<body>
+        <main class="main-container">
+        
+          <div id="addpub-edit">
+            <div id="close-btn" ><span class="material-icons-outlined"><a href="/admin/issue" >close</a></span> </div>
+            <form class="addiss" action="/admin/addissue" method="post" >
+                <h1>Issued Book</h1>
+                <span>Book Id</span>
+                <br>
+                <input type="text" class="box1" placeholder="Book Id" name="bbookid"  required>
+                <br>
+                <span>Book Name</span>
+                <br>
+                <input type="text" class="box1" placeholder="Book Name" name="bbookname" required>
+                <br>
+                <span>Student Id</span>
+                <br>
+                <input type="text" class="box1" placeholder="Student Id" name="sstudid" required>
+                <br>
+                <br>
+                <span>Student Name (who borrowed)</span>
+                <br>
+                <input type="text" class="box1" placeholder="Student Name" name="sstudname" required>
+                <br>
+                <span>issued date (mm/dd/yy)</span>
+                <br>
+                <input type="date" value="2023-06-07" min="1970-01-01" max="2027-01-01" class="box1" name="issdate" required>
+                <br>
+                <span>last return date (mm/dd/yy)</span>
+                <br>
+                <input type="date" value="2023-07-07" min="1970-01-01" max="2027-01-01" class="box1" name="retdate" required>
+
+                <br>
+                <span>Student Email</span>
+                <br>
+                <input type="email" class="box1" placeholder="Email" name="studemail" required>
+                <br>
+                <span>Student Phone Number</span>
+                <br>
+                <input type="text" class="box1" placeholder="Mobile Number" name="studphnoo" required>
+                <br>
+                <br>
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option>--SELECT--</option>
+                    <option>Issued</option>
+                    <option>Returned</option>
+                </select>
+                <br>
+                <br>
+                <button type="submit" class="submit-button-2">Submit</button>
+            </form>
+        </div>
+            
+        </main>
+        
+    
+    <!-- apex charts(goto:https://cdnjs.com/libraries/apexcharts) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js"></script>
+    <script src="/js/dash.js"></script>
+    
+</body>
+</html>

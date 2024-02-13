@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin DashBoard </title>
+    
+    <!-- montesart icons( from google fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- material icons "add +Outlined" (from:https://developers.google.com/fonts/docs/material_icons)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/dash.css">
+</head>
+<body>
+        <main class="main-container">
+        
+          <div id="addpub-edit">
+            <div id="close-btn" ><span class="material-icons-outlined"><a href="/admin/student" >close</a></span> </div>
+            <form class="addstu"  action="/admin/updatestud/{{stud._id}}" method="post">
+                <h1>Add Student</h1>
+                <span>Student Id</span>
+                <br>
+                <input type="text" class="box1" placeholder="Student Id" name="studid" value="{{stud.studid}}" required>
+                <br>
+                <br>
+                <span>Student Name</span>
+                <br>
+                <input type="text" class="box1" placeholder="Student Name" name="studname" value="{{stud.studname}}" required>
+                <br>
+                <span>Department</span>
+                <select  id="department" name="department" value="{{stud.department}}" >
+                    <option>---SELECT---</option>
+                    <option>Civil</option>
+                    <option>Computer Science</option>
+                    <option>Data Science</option>
+                    <option>Electrical</option>
+                    <option>Electronics</option>
+                    <option>Mechanical</option>                                      
+                </select>
+                <span>Year</span>
+                <select  id="year" name="year" value="{{stud.year}}" >
+                    <option>---SELECT---</option>
+                    <option>1st year</option>
+                    <option>2nd year</option>
+                    <option>3rd year</option>
+                    <option>4th year</option>                                      
+                </select>
+                <span>Gender</span>
+                <select  id="gender" name="gender" value="{{stud.gender}}" >
+                    <option>---SELECT---</option>
+                    <option>Male</option>
+                    <option>Female</option>                                     
+                </select>
+                <span>DOB (mm/dd/yy)</span>
+                <br>
+                <input type="date" value="2023-05-07" min="1970-01-01" max="2027-01-01" class="box1"  name="dob" value="{{stud.dob}}"  required>
+                <br>
+                <span>Student Email</span>
+                <br>
+                <input type="email" class="box1" placeholder="Email"  name="email" value="{{stud.email}}" required>
+                <br>
+                <span>Student Phone Number</span>
+                <br>
+                <input type="text" class="box1" placeholder="Mobile Number" name="studphno" value="{{stud.studphno}}" required>
+                <br>
+                <br>
+                <button type="submit" class="submit-button-2">Submit</button>
+            </form>
+        </div>
+            
+        </main>
+        
+    
+    <!-- apex charts(goto:https://cdnjs.com/libraries/apexcharts) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.40.0/apexcharts.min.js"></script>
+    <script src="/js/dash.js"></script>
+    
+</body>
+</html>
